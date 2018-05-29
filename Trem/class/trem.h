@@ -1,18 +1,30 @@
+
 #ifndef TREM_H
 #define TREM_H
-#include <string>
-#include <iostream>
+
+#include "mapatrem.h"
 
 using namespace std;
 
-class Trem : public Task{
+class Trem{
 protected:
-  int posX;
-  int posY;
+    Thread *thread = NULL;
+    MapaTrem mapa;
 
-  int velX;
-  int velY;
-  int acelX;
-  int acelY;
-  std::vector<Point> vecP;
-}
+    Point pos;
+    unsigned int pAtual;
+
+    int velX;
+    int velY;
+    int acelX;
+    int acelY;
+    vector<Point> vecP;
+public:
+    Trem( MapaTrem & nMapa, vector<Point> & ps);
+    void getMapa( MapaTrem & nMapa);
+    void setPos( int px, int py);
+    void posAtual( int *x, int *y);
+    void moveTrem();
+};
+
+#endif

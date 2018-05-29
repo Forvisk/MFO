@@ -1,7 +1,9 @@
 #include <iostream>
 #include "class/mapatrem.h"
+#include "class/trem.h"
 #include "class/threads/thread.h"
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -39,8 +41,12 @@ int main(int argc, char **argv) {
     //trens.Trem2Pos(100,200);
     //trens.Trem1Txt("Mensagem trem 1.");
     //trens.Trem2Txt("Mensagem trem 2.");
-
-    trens.Gate(1);
+    Trem trem1 = Trem( trens, pt1);
+    cout << "here" << endl;
+    Trem trem2 = Trem( trens, pt2);
+    cout << "here 2" << endl;
+    //trens.Gate(1);
+    /*
     for(Point p : pt1)
     {
         trens.Trem1Pos(p.x,p.y);
@@ -51,9 +57,16 @@ int main(int argc, char **argv) {
         if(key == 27)
             return 1;
     }
+    */
+    while (true){
+        trem1.moveTrem();
+        trem2.moveTrem();
+    }
 
 
-    trens.Gate(0);
+
+    //trens.Gate(0);
+    /*
     for( Point p : pt2){
         trens.Trem2Pos(p.x,p.y);
         Thread::SleepMS(2000);
@@ -63,6 +76,7 @@ int main(int argc, char **argv) {
         if(key == 27) //esc = 27
             return 1;
     }
+    */
 
     return 0;
 }
