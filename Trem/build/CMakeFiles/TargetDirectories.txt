@@ -1,0 +1,7 @@
+/home/udesc/Área de Trabalho/MFO/Trem/build/CMakeFiles/install.dir
+/home/udesc/Área de Trabalho/MFO/Trem/build/CMakeFiles/list_install_components.dir
+/home/udesc/Área de Trabalho/MFO/Trem/build/CMakeFiles/rebuild_cache.dir
+/home/udesc/Área de Trabalho/MFO/Trem/build/CMakeFiles/trem.dir
+/home/udesc/Área de Trabalho/MFO/Trem/build/CMakeFiles/install/strip.dir
+/home/udesc/Área de Trabalho/MFO/Trem/build/CMakeFiles/install/local.dir
+/home/udesc/Área de Trabalho/MFO/Trem/build/CMakeFiles/edit_cache.dir
