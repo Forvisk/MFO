@@ -9,6 +9,9 @@ using namespace std;
 
 int main(int argc, char **argv) {
     MapaTrem trens;
+    //Trem trem1;
+    //Trem trem2;
+    int x, y;
 
     // posições para os trens
     vector<Point> pt1;
@@ -41,24 +44,27 @@ int main(int argc, char **argv) {
     //trens.Trem2Pos(100,200);
     //trens.Trem1Txt("Mensagem trem 1.");
     //trens.Trem2Txt("Mensagem trem 2.");
-    Trem trem1 = Trem( trens, pt1);
+    Trem trem1 = Trem( pt1);
     cout << "here" << endl;
-    Trem trem2 = Trem( trens, pt2);
+    Trem trem2 = Trem( pt2);
     cout << "here 2" << endl;
     //trens.Gate(1);
-    /*
-    for(Point p : pt1)
+    while(true)
     {
-        trens.Trem1Pos(p.x,p.y);
-        Thread::SleepMS(2000);
+        Thread::SleepMS(1000);
+        trem1.getPos( &x, &y);
+        cout << "Trem 1 : ( " << x << ", " << y << ")" << endl;
+        trens.Trem1Pos( x, y);
+
+        trem2.getPos( &x, &y);
+        cout << "Trem 2 : ( " << x << ", " << y << ")" << endl;
+        trens.Trem2Pos( x, y);
 
         int key = trens.GetLastKey();
         cout << "LastKey = " << key << endl;
         if(key == 27)
             return 1;
-    }
-    */
-    while (true){
+
         trem1.moveTrem();
         trem2.moveTrem();
     }
