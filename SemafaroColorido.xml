@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+<net id="Net-One" type="P/T net">
+<token id="Default" enabled="true" red="0" green="0" blue="0"/>
+<token id="GREEN" enabled="true" red="0" green="255" blue="0"/>
+<token id="RED" enabled="true" red="255" green="0" blue="0"/>
+<token id="YELLOW" enabled="true" red="255" green="255" blue="0"/>
+<place id="Semaforo1">
+<graphics>
+<position x="240.0" y="255.0"/>
+</graphics>
+<name>
+<value>Semaforo1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>RED,0,GREEN,1,Default,0,YELLOW,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Semaforo2">
+<graphics>
+<position x="570.0" y="270.0"/>
+</graphics>
+<name>
+<value>Semaforo2</value>
+<graphics>
+<offset x="124.0" y="19.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>RED,1,Default,0,YELLOW,0,GREEN,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<transition id="S1toRed_S2toGreen">
+<graphics>
+<position x="405.0" y="165.0"/>
+</graphics>
+<name>
+<value>S1toRed_S2toGreen</value>
+<graphics>
+<offset x="24.0" y="-17.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="S1toYellow">
+<graphics>
+<position x="120.0" y="255.0"/>
+</graphics>
+<name>
+<value>S1toYellow</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="S2toRed_S1toGreen">
+<graphics>
+<position x="390.0" y="360.0"/>
+</graphics>
+<name>
+<value>S2toRed_S1toGreen</value>
+<graphics>
+<offset x="32.0" y="52.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="S2toYellow">
+<graphics>
+<position x="690.0" y="270.0"/>
+</graphics>
+<name>
+<value>S2toYellow</value>
+<graphics>
+<offset x="64.0" y="49.0"/>
+</graphics>
+</name>
+<orientation>
+<value>270</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<arc id="S1toRed_S2toGreen to Semaforo1" source="S1toRed_S2toGreen" target="Semaforo1">
+<graphics/>
+<inscription>
+<value>RED,1,Default,0,YELLOW,0,GREEN,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="411" y="182" curvePoint="false"/>
+<arcpath id="001" x="263" y="257" curvePoint="true"/>
+<type value="normal"/>
+</arc>
+<arc id="S1toRed_S2toGreen to Semaforo2" source="S1toRed_S2toGreen" target="Semaforo2">
+<graphics/>
+<inscription>
+<value>GREEN,1,Default,0,RED,0,YELLOW,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="422" y="172" curvePoint="false"/>
+<arcpath id="001" x="538" y="175" curvePoint="true"/>
+<arcpath id="002" x="579" y="267" curvePoint="true"/>
+<type value="normal"/>
+</arc>
+<arc id="S1toYellow to Semaforo1" source="S1toYellow" target="Semaforo1">
+<graphics/>
+<inscription>
+<value>YELLOW,1,Default,0,RED,0,GREEN,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="131" y="271" curvePoint="false"/>
+<arcpath id="001" x="177" y="304" curvePoint="true"/>
+<arcpath id="002" x="239" y="275" curvePoint="true"/>
+<type value="normal"/>
+</arc>
+<arc id="S2toRed_S1toGreen to Semaforo1" source="S2toRed_S1toGreen" target="Semaforo1">
+<graphics/>
+<inscription>
+<value>GREEN,1,Default,0,RED,0,YELLOW,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="397" y="367" curvePoint="false"/>
+<arcpath id="001" x="261" y="278" curvePoint="true"/>
+<type value="normal"/>
+</arc>
+<arc id="S2toRed_S1toGreen to Semaforo2" source="S2toRed_S1toGreen" target="Semaforo2">
+<graphics/>
+<inscription>
+<value>RED,1,Default,0,YELLOW,0,GREEN,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="406" y="377" curvePoint="false"/>
+<arcpath id="001" x="537" y="387" curvePoint="true"/>
+<arcpath id="002" x="579" y="296" curvePoint="true"/>
+<type value="normal"/>
+</arc>
+<arc id="S2toYellow to Semaforo2" source="S2toYellow" target="Semaforo2">
+<graphics/>
+<inscription>
+<value>YELLOW,1,Default,0,RED,0,GREEN,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="702" y="277" curvePoint="false"/>
+<arcpath id="001" x="649" y="242" curvePoint="true"/>
+<arcpath id="002" x="593" y="272" curvePoint="true"/>
+<type value="normal"/>
+</arc>
+<arc id="Semaforo1 to S1toRed_S2toGreen" source="Semaforo1" target="S1toRed_S2toGreen">
+<graphics/>
+<inscription>
+<value>YELLOW,1,Default,0,RED,0,GREEN,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="252" y="252" curvePoint="false"/>
+<arcpath id="001" x="287" y="171" curvePoint="true"/>
+<arcpath id="002" x="412" y="172" curvePoint="true"/>
+<type value="normal"/>
+</arc>
+<arc id="Semaforo1 to S1toYellow" source="Semaforo1" target="S1toYellow">
+<graphics/>
+<inscription>
+<value>GREEN,1,Default,0,RED,0,YELLOW,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="239" y="259" curvePoint="false"/>
+<arcpath id="001" x="164" y="228" curvePoint="true"/>
+<arcpath id="002" x="131" y="261" curvePoint="true"/>
+<type value="normal"/>
+</arc>
+<arc id="Semaforo1 to S2toRed_S1toGreen" source="Semaforo1" target="S2toRed_S1toGreen">
+<graphics/>
+<inscription>
+<value>RED,1,Default,0,YELLOW,0,GREEN,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="255" y="281" curvePoint="false"/>
+<arcpath id="001" x="304" y="392" curvePoint="true"/>
+<arcpath id="002" x="396" y="377" curvePoint="true"/>
+<type value="normal"/>
+</arc>
+<arc id="Semaforo2 to S1toRed_S2toGreen" source="Semaforo2" target="S1toRed_S2toGreen">
+<graphics/>
+<inscription>
+<value>RED,1,Default,0,YELLOW,0,GREEN,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="571" y="271" curvePoint="false"/>
+<arcpath id="001" x="421" y="182" curvePoint="true"/>
+<type value="normal"/>
+</arc>
+<arc id="Semaforo2 to S2toRed_S1toGreen" source="Semaforo2" target="S2toRed_S1toGreen">
+<graphics/>
+<inscription>
+<value>YELLOW,1,Default,0,RED,0,GREEN,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="570" y="291" curvePoint="false"/>
+<arcpath id="001" x="407" y="367" curvePoint="true"/>
+<type value="normal"/>
+</arc>
+<arc id="Semaforo2 to S2toYellow" source="Semaforo2" target="S2toYellow">
+<graphics/>
+<inscription>
+<value>GREEN,1,Default,0,RED,0,YELLOW,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="594" y="289" curvePoint="false"/>
+<arcpath id="001" x="658" y="315" curvePoint="true"/>
+<arcpath id="002" x="702" y="287" curvePoint="true"/>
+<type value="normal"/>
+</arc>
+</net>
+</pnml>
