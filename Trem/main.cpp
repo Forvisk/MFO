@@ -13,6 +13,7 @@ int main(int argc, char **argv) {
     //Trem trem2;
     int x, y;
 
+    srand( time(nullptr));
     // posições para os trens
     vector<Point> pt1;
     pt1.push_back(Point(25, 158));//Lucerne
@@ -64,9 +65,27 @@ int main(int argc, char **argv) {
         cout << "LastKey = " << key << endl;
         if(key == 27)
             return 1;
+        if( !trem1.getInicio())
+        {
+            std::cout << "Trem1 se move" << '\n';
+            trem1.moveTrem();
+        }
+        else if( 0 < (rand() % 4))
+        {
+            std::cout << "Trem1 sai do inicio" << '\n';
+            trem1.moveTrem();
+        }
 
-        trem1.moveTrem();
-        trem2.moveTrem();
+        if( !trem1.getInicio())
+        {
+            std::cout << "Trem1 se move" << '\n';
+            trem2.moveTrem();
+        }
+        else if( 0 < (rand() % 4))
+        {
+            std::cout << "Trem1 sai do inicio" << '\n';
+            trem2.moveTrem();
+        }
     }
 
 

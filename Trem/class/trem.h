@@ -8,9 +8,9 @@
 
 using namespace std;
 
-class Trem{
+class Trem
+{
 protected:
-    Thread *thread = NULL;
 
     Point pos;
     Point veloc;
@@ -20,12 +20,14 @@ protected:
     unsigned int pProximo;
     vector<Point> vecP;
     void moveAcel();
+    bool inicio;
 public:
     Trem( vector<Point> & ps);
     void setPos( int px, int py);
     void getPos( int *x, int *y);
     void moveTrem();
     void moveBasico();
+    bool getInicio();
 };
 
 #endif
